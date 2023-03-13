@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Quality score test</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <h1 class="header__title">CHOOSE YOUR PACKAGE</h1>
+        </header>
+    
+        <main class="main">
+            <section class="switches main__switches">
+                <div class="switch switches__switch-quantity">
+                    <input id="one" class="switch-quantity__input" type="radio" name="quantity" value="one">
+                    <label class="switch__label" for="one">1</label>
+                    
+                    <input id="three" class="switch-quantity__input" type="radio" name="quantity" value="three" checked>
+                    <label class="switch__label" for="three">3</label>
+                    
+                    <input id="six" class="switch-quantity__input" type="radio" name="quantity" value="six">
+                    <label class="switch__label" for="six">6</label>
+                </div>
+    
+                <div class="switch switches__switch-type">
+                    <input id="one-time" class="switch-type__input" type="radio" name="type" value="one-time" checked>
+                    <label class="switch__label" for="one-time">One-Time Purchase</label>
+                    
+                    <input id="subscribe" class="switch-type__input" type="radio" name="type" value="subscribe">
+                    <label class="switch__label" for="subscribe">Subscribe & Save More</label>
+                </div>
+            </section>
+    
+            <section class="goods-info main__goods-info">
+                <div class="subscribe-info goods-info__subscribe-info hidden">
+                    <label class="subscribe-info__checkbox">Yes! I want to Subscribe & Save
+                        <input id="subscribe-checkbox" type="checkbox">
+                        <span></span>
+                    </label>
+    
+                    <div>By checking the "Yes" box above, you agree to receive "Dermal Repair Complex" once per month and that your credit card will be charged the amount matching your selected package size, billed to your card as "Beverly Hills MD". You can stop shipments anytime by calling customer service at <a tel="8778285528">(877) 828-5528</a> from 6am to 6pm PST. (<a href="#">All terms and conditions apply</a>)</div>
+                </div>
+    
+                <div class="goods-info__img-wrapper">
+                    <img src="./img/stamp_red.svg" id="stamp" class="goods-info__stamp-img"/>
+                    <img src="./img/3pack.png" id="pack-img" class="goods-info__pack-img"/>
+                </div>
+    
+                <div id="price" class="goods-info__price">$102.00</div>
+    
+                <div class="goods-info__text">
+                    Retail price 
+                    <span id="retail-price" class="goods-info__retail">$174.00</span>
+                </div>
+    
+                <div class="goods-info__text">
+                    Instant savings 
+                    <span id="savings" class="goods-info__savings"></span>
+                </div>
+    
+                <div class="goods-info__text">FREE US SHIPPING</div>
+            </section>
+    
+            <a href="www.tracker.com/link-3" class="main__buy-btn" target="_blank">BUY NOW</a>
+        </main>
+    
+        <footer class="footer">
+            <section class="delivery-info footer__delivery-info">
+                <div class="delivery-info__info-wrapper">
+                    <img src="./img/usa-flag.svg" alt="USA" class="delivery-info__info-img" />
+                    <div class="delivery-info__info-text">Manufactured in USA</div>
+                </div>
+    
+                <div class="delivery-info__info-wrapper">
+                    <img src="./img/delivery-truck.svg" alt="truck" class="delivery-info__info-img" />
+                    <div class="delivery-info__info-text">Door to door</div>
+                </div>
+            </section>
+    
+            <section class="guarantee footer__guarantee">
+                <img src="./img/90days.svg" alt="90 days money back guarantee" />
+    
+                <div class="guarantee__order-backed">Your order is backed by our 90-day money-back guarantee.</div>
+    
+                <div class="guarantee__refund">We are confident you"ll love it. So if you"re not completely satisfied for any reason, just send it back for a full refund!</div>
+    
+                <div class="guarantee__additional-info">(Not including return shipping)</div>
+            </section>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

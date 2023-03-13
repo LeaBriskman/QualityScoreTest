@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "sass": "^1.59.2"
+  },
+  "name": "quality_score_test",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss/index.scss css/index.css"
+  },
+  "author": "Lea Briskman",
+  "license": "ISC",
+  "description": ""
+}
