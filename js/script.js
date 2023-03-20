@@ -71,14 +71,14 @@ const updateData = (goodsNumber, type) => {
         buyBtn.href = link;
         subscribeBlock.classList.add("hidden");
         // enable buy btn by default for this type
-        buyBtn.classList.remove('main__buy-btn_disabled');
+        buyBtn.classList.remove('disabled');
     } else {
         priceEl.innerHTML = `$${subscribePrice.toFixed(2)}<span class="goods-info__month">/month</span>`;
         calculateSavings(retailPrice, subscribePrice);
         buyBtn.href = subscribeLink;
         subscribeBlock.classList.remove("hidden");
         // disable buy btn and uncheck subscribe checkbox by default for this type
-        buyBtn.classList.add('main__buy-btn_disabled');
+        buyBtn.classList.add('disabled');
         subscribeCheckbox.checked = false;
     }
 };
@@ -97,6 +97,6 @@ typeCheckEls.forEach(item => {
 
 // disable buy btn when subscription check is not confirmed
 subscribeCheckbox.addEventListener("click", e => {
-    if (!e.target.checked) buyBtn.classList.add('main__buy-btn_disabled')
-    else buyBtn.classList.remove('main__buy-btn_disabled')
+    if (!e.target.checked) buyBtn.classList.add('disabled')
+    else buyBtn.classList.remove('disabled')
 });

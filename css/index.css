@@ -1,3 +1,60 @@
+@media (min-width: 375px) {
+  .goods-info__img-wrapper {
+    height: 267px;
+  }
+  .goods-info__stamp-img {
+    top: 25px;
+    left: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .main__switches {
+    margin-top: 23px;
+  }
+  .main__buy-btn {
+    margin: 12px 0 83px;
+  }
+  .goods-info__text {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .switches {
+    gap: 17px;
+  }
+  .guarantee {
+    margin-top: 53px;
+  }
+  .guarantee__order-backed {
+    white-space: nowrap;
+  }
+  .guarantee__refund {
+    width: 680px;
+    margin: 30px 0 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .main__switches {
+    margin-top: 26px;
+  }
+  .main__buy-btn {
+    margin: 12px 0 47px;
+  }
+  .guarantee {
+    margin-top: 43px;
+  }
+  .guarantee__order-backed {
+    white-space: nowrap;
+  }
+  .guarantee__refund {
+    white-space: nowrap;
+    width: fit-content;
+  }
+}
+.main__buy-btn.disabled {
+  background-color: #9A9B9C;
+  pointer-events: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,43 +62,41 @@
 }
 
 body {
-  background: url(../img/leaves_left.png) -120px 20% no-repeat, url(../img/leaves_right.png) right -90px top 30% no-repeat, url(../img/bg_mobile_left.png) left top no-repeat, url(../img/bg_mobile_right.png) right top no-repeat;
+  background: url(../img/leaves_left.png) -120px 20% no-repeat, url(../img/leaves_right.png) right -90px top 30% no-repeat, url(../img/bg_mobile.png) no-repeat;
+  background-size: auto, auto, cover;
 }
 
 .page-wrapper {
   padding: 30px 15px;
 }
 
+@media (min-width: 375px) {
+  body {
+    background-size: auto, auto, 100%;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    background: url(../img/leaves_left.png) -150px 5% no-repeat, url(../img/leaves_right.png) right -90px top 20% no-repeat, url(../img/bg_tablet.png) no-repeat;
+    background-size: 300px, 250px, 100%;
+  }
+  .page-wrapper {
+    max-width: 344px;
+    margin: auto;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background: url(../img/leaves_left.png) -120px 5% no-repeat, url(../img/leaves_right.png) right -75px top 20% no-repeat, url(../img/bg_desktop.png) no-repeat;
+    background-size: 250px, 200px, 100%;
+  }
+}
 .header__title {
   color: #3A61A0;
   font-size: 24px;
-  line-height: 30px;
+  line-height: 1.25;
   font-weight: 800;
   text-align: center;
-}
-
-.main__switches {
-  margin-top: 18px;
-}
-.main__buy-btn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  height: 58px;
-  width: 100%;
-  background-color: #7FB457;
-  cursor: pointer;
-  color: #FFFFFF;
-  border-radius: 29px;
-  margin: 27px 0 47px;
-  font-size: 32px;
-  font-weight: 700;
-}
-.main__buy-btn_disabled {
-  background-color: #9A9B9C;
-  pointer-events: none;
 }
 
 .switches {
@@ -67,6 +122,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-duration: 300ms;
+  text-align: center;
 }
 .switch input[type=radio]:checked + label {
   background: #3A61A0;
@@ -76,69 +133,16 @@ body {
 
 .switches__switch-quantity label {
   font-size: 24px;
-  line-height: 25px;
+  line-height: 1.05;
   font-weight: 700;
+}
+.switches__switch-quantity input[type=radio]:checked + label {
+  transform: scale(1.2);
 }
 
 .switches__switch-type label {
   font-size: 16px;
-  line-height: 24px;
-}
-
-.goods-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  color: #45516D;
-  font-weight: 700;
-}
-.goods-info__subscribe-info {
-  display: block;
-  font-size: 12px;
-  line-height: 16px;
-  color: #9A9B9C;
-  font-weight: 400;
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 15px -15px -20px;
-  padding: 15px;
-}
-.goods-info__subscribe-info.hidden {
-  display: none;
-}
-.goods-info__img-wrapper {
-  height: 267px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  position: relative;
-}
-.goods-info__stamp-img {
-  position: absolute;
-  top: 25px;
-  left: 40px;
-}
-.goods-info__pack-img {
-  width: 100%;
-}
-.goods-info__price {
-  font-size: 48px;
-  color: #3A61A0;
-  margin-top: -20px;
-}
-.goods-info__month {
-  font-size: 32px;
-}
-.goods-info__text {
-  font-size: 18px;
-  line-height: 24px;
-}
-.goods-info__retail {
-  color: #E66349;
-  text-decoration: line-through;
-}
-.goods-info__savings {
-  color: #7FB457;
+  line-height: 1.5;
 }
 
 .subscribe-info__checkbox {
@@ -161,6 +165,7 @@ body {
   width: 24px;
   border-radius: 4px;
   border: 1px solid #9DA4BC;
+  transition-duration: 300ms;
 }
 .subscribe-info__checkbox input:checked ~ span {
   background-color: #3A61A0;
@@ -174,13 +179,14 @@ body {
   display: block;
 }
 .subscribe-info__checkbox span:after {
-  left: 9px;
-  top: 5px;
+  left: 8px;
+  top: 4px;
   width: 5px;
   height: 10px;
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
+  transition-duration: 300ms;
 }
 
 .delivery-info {
@@ -195,10 +201,11 @@ body {
   align-items: center;
   flex-direction: column;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.7;
   justify-content: center;
   gap: 12px;
   margin: 0 17px;
+  text-align: center;
 }
 
 .guarantee {
@@ -211,75 +218,108 @@ body {
 }
 .guarantee__order-backed {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.3;
   color: #7FB457;
   font-weight: 800;
   margin: 8px 20px 0;
 }
 .guarantee__refund {
   font-size: 18px;
-  line-height: 24px;
+  line-height: 1.3;
   color: #45516D;
   margin-top: 3px;
   font-weight: 600;
 }
 .guarantee__additional-info {
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.7;
   color: #9A9B9C;
 }
 
-@media (min-width: 768px) {
-  body {
-    background: url(../img/leaves_left.png) -150px 5% no-repeat, url(../img/leaves_right.png) right -90px top 20% no-repeat, url(../img/bg_mobile_left.png) left top no-repeat, url(../img/bg_mobile_right.png) right top no-repeat;
-    background-size: 300px, 250px, contain, contain;
+@keyframes smooth {
+  from {
+    opacity: 0;
   }
-  .page-wrapper {
-    max-width: 344px;
-    margin: auto;
-  }
-  .main__switches {
-    margin-top: 23px;
-  }
-  .switches {
-    gap: 17px;
-  }
-  .guarantee {
-    margin-top: 53px;
-  }
-  .guarantee__order-backed {
-    white-space: nowrap;
-  }
-  .guarantee__refund {
-    width: 680px;
-    margin: 30px 0 15px;
+  to {
+    opacity: 1;
   }
 }
-@media (min-width: 1024px) {
-  body {
-    background: url(../img/leaves_left.png) -120px 5% no-repeat, url(../img/leaves_right.png) right -75px top 20% no-repeat, url(../img/bg_desktop_left.png) left top no-repeat, url(../img/bg_desktop_right.png) right top no-repeat;
-    background-size: 250px, 200px, contain, contain;
-  }
-  .main__switches {
-    margin-top: 26px;
-  }
-  .main__buy-btn {
-    margin: 12px 0 47px;
-  }
-  .goods-info__text {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  .guarantee {
-    margin-top: 43px;
-  }
-  .guarantee__order-backed {
-    white-space: nowrap;
-  }
-  .guarantee__refund {
-    white-space: nowrap;
-    width: fit-content;
-  }
+.main__switches {
+  margin-top: 18px;
+}
+.main__buy-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 58px;
+  width: 100%;
+  background-color: #7FB457;
+  cursor: pointer;
+  color: #FFFFFF;
+  border-radius: 29px;
+  margin: 27px 0 47px;
+  font-size: 32px;
+  font-weight: 700;
+  transition: background 500ms;
+}
+
+.goods-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  color: #45516D;
+  font-weight: 700;
+}
+.goods-info__subscribe-info {
+  display: block;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #9A9B9C;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 15px -15px -20px;
+  padding: 15px;
+  animation: smooth 1s;
+}
+.goods-info__subscribe-info.hidden {
+  display: none;
+}
+.goods-info__img-wrapper {
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+.goods-info__stamp-img {
+  position: absolute;
+  top: 0;
+  left: 30px;
+}
+.goods-info__pack-img {
+  width: 100%;
+}
+.goods-info__price {
+  font-size: 48px;
+  color: #3A61A0;
+  margin-top: -20px;
+}
+.goods-info__month {
+  font-size: 32px;
+}
+.goods-info__text {
+  font-size: 18px;
+  line-height: 1.3;
+}
+.goods-info__retail {
+  color: #E66349;
+  text-decoration: line-through;
+}
+.goods-info__savings {
+  color: #7FB457;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Assistant;
+}
+
+body {
+    background: url(../img/leaves_left.png) -120px 20% no-repeat, url(../img/leaves_right.png) right -90px top 30% no-repeat, url(../img/bg_mobile.png) no-repeat;
+    background-size: auto, auto, cover;
+}
+
+.page-wrapper {
+    padding: 30px 15px;
+}
+
+@media (min-width: $breakpoint-mobile) {
+    body {
+        background-size: auto, auto, 100%;
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    body {
+        background: url(../img/leaves_left.png) -150px 5% no-repeat, url(../img/leaves_right.png) right -90px top 20% no-repeat, url(../img/bg_tablet.png) no-repeat;
+        background-size: 300px, 250px, 100%;
+    }
+
+    .page-wrapper {
+        max-width: 344px;
+        margin: auto;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    body {
+        background: url(../img/leaves_left.png) -120px 5% no-repeat, url(../img/leaves_right.png) right -75px top 20% no-repeat, url(../img/bg_desktop.png) no-repeat;
+        background-size: 250px, 200px, 100%;
+    }
+}

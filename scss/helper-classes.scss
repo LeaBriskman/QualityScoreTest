@@ -1,0 +1,6 @@
+.main {
+    &__buy-btn.disabled {
+        background-color: $grey;
+        pointer-events: none;
+    }
+}

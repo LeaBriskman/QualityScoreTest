@@ -1,0 +1,183 @@
+// header
+.header {
+    &__title {
+        color: $blue;
+        font-size: 24px;
+        line-height: 1.25;
+        font-weight: 800;
+        text-align: center;
+    }
+}
+
+// switches
+.switches {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.switch {
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid $dark-grey;
+    background-color: $white;
+    height: 40px;
+
+    input {
+        display: none;
+    }
+
+    &__label {
+        cursor: pointer;
+        width: 100%;
+        color: $grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: 300ms;
+        text-align: center;
+    }
+
+    input[type="radio"]:checked {
+        + label {
+            background: $blue;
+            color: $white;
+            border-radius: 23px;
+        }
+    }
+}
+
+.switches__switch-quantity {
+    label {
+        font-size: 24px;
+        line-height: 1.05;
+        font-weight: 700;
+    }
+
+    input[type="radio"]:checked {
+        + label {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.switches__switch-type {
+    label {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+// checkbox
+.subscribe-info {
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 32px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 18px;
+        color: $dark-blue;
+    }
+      
+    &__checkbox {
+        input {
+            display: none;
+        }
+    }
+      
+    span {
+        position: absolute;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        border-radius: 4px;
+        border: 1px solid $dark-grey;
+        transition-duration: 300ms;
+    } 
+
+    &__checkbox {
+        input {
+            &:checked ~ span {
+                background-color: $blue;
+            }
+        }
+    }
+
+    span {
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+      
+    &__checkbox {
+        input {
+            &:checked ~ span {
+                &:after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__checkbox {
+        span {
+            &:after {
+                left: 8px;
+                top: 4px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+                transition-duration: 300ms;
+            }
+        }
+    }
+}
+
+// footer
+.delivery-info {
+    @include flex;
+    margin: 0 15px;
+
+    &__info-wrapper {
+        @include flex-column;
+        @include small-size-text;
+
+        justify-content: center;
+        gap: 12px;
+        margin: 0 17px;
+        text-align: center;
+    }
+}
+
+.guarantee {
+    @include flex-column;
+
+    text-align: center;
+    margin-top: 33px;
+
+    &__order-backed {
+        @include regular-size-text;
+        color: $green;
+        font-weight: 800;
+        margin: 8px 20px 0;
+    }
+
+    &__refund {
+        @include regular-size-text;
+        color: $dark-blue;
+        margin-top: 3px;
+        font-weight: 600;
+    }
+
+    &__additional-info {
+        @include small-size-text;
+
+        color: $grey;
+    }
+}

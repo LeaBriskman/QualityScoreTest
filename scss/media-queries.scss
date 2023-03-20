@@ -1,0 +1,73 @@
+@media (min-width: $breakpoint-mobile) {
+    .goods-info {
+        &__img-wrapper {
+            height: 267px;
+        }
+    
+        &__stamp-img {
+            top: 25px;
+            left: 40px;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .main {
+        &__switches {
+            margin-top: 23px;
+        }
+
+        &__buy-btn {
+            margin: 12px 0 83px;
+        }
+    }
+
+    .goods-info {
+        &__text {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .switches {
+        gap: 17px;
+    }
+
+    .guarantee {
+        margin-top: 53px;
+    
+        &__order-backed {
+            white-space: nowrap;
+        }
+    
+        &__refund {
+            width: 680px;
+            margin: 30px 0 15px;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .main {
+        &__switches {
+            margin-top: 26px;
+        }
+
+        &__buy-btn {
+            margin: 12px 0 47px;
+        }
+    }
+
+    .guarantee {
+        margin-top: 43px;
+    
+        &__order-backed {
+            white-space: nowrap;
+        }
+    
+        &__refund {
+            white-space: nowrap;
+            width: fit-content;
+        }
+    }
+}
